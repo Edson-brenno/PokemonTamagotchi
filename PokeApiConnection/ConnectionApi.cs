@@ -1,28 +1,30 @@
 ﻿using RestSharp;
 using PokeApiConnection.ConnectionsExceptions;
+using ApiConnection.Utilitarios;
 
 namespace PokeApiConnection
 {
     public class ConnectionApi
     {
         
-        internal RestClient client { get; set; }
+        internal string endereco { get; set; }
 
-        public ConnectionApi(string Address)
+        public ConnectionApi(string address)
         {
-            client = new RestClient(Address);
+            this.endereco = address;
         }
-        public void TestConnectionApi()
+        public void CheckConnectionApi()
         {
 
-            RestRequest request = new RestRequest("https://pok", Method.Get);
+            TestConnection check = new TestConnection(this.endereco);
 
-            RestResponse Response = client.Execute(request);
+            bool isAvailable = check.IsApiAvailable();
 
-            if (Response.IsSuccessful == false) {
-
+            if (isAvailable == false)
+            {
                 throw new ConnectionNotSuccessful();
             }
+            
         }
         
        
