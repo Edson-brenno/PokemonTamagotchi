@@ -11,19 +11,27 @@ namespace ApiConnection.Utilitarios
     internal class TestConnection //This class will check if the api e available; Esta classe vai verificar se a api está disponivel
     {
 
-        private string _Address { get;set;}
-        internal TestConnection(string address)
+        internal static bool IsApiAvailable(string address)
         {
-            this._Address = address;
-        }
+            RestClient client = new RestClient(address);
 
-        internal bool IsApiAvailable()
-        {
-            RestRequest request = new RestRequest(this._Address, Method.Get);
+            RestRequest request = new RestRequest("", Method.Get);
 
-            RestResponse response = new RestResponse(request);
+            RestResponse response = client.ExecuteGet(request);
 
             return response.IsSuccessful;
         }
+
+        internal static bool IsApiAvailable(string address, string endereco)
+        {
+            RestClient client = new RestClient(address);
+
+            RestRequest request = new RestRequest(endereco, Method.Get);
+
+            RestResponse response = client.ExecuteGet(request);
+
+            return response.IsSuccessful;
+        }
+
     }
 }

@@ -1,5 +1,14 @@
 ﻿using PokeApiConnection;
+using RestSharp;
 
-ConnectionApi tt = new ConnectionApi();
+try
+{
+    ConnectionApi tt = new ConnectionApi("https://pokeapi.co/api/v2/");
 
-tt.TestConnectionApi();
+    tt.CheckConnectionApi();
+   
+}
+catch(Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}

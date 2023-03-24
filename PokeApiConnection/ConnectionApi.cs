@@ -16,9 +16,7 @@ namespace PokeApiConnection
         public void CheckConnectionApi()
         {
 
-            TestConnection check = new TestConnection(this.endereco);
-
-            bool isAvailable = check.IsApiAvailable();
+            bool isAvailable = TestConnection.IsApiAvailable(this.endereco);
 
             if (isAvailable == false)
             {

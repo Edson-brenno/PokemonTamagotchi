@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PokeApiConnection\PokeApiConnection.csproj" />
+    <ProjectReference Include="..\PokeApiConnection\ApiConnection.csproj" />
   </ItemGroup>
 
 </Project>
