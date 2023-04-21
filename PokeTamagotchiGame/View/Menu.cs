@@ -76,7 +76,7 @@ namespace PokeTamagotchiGame.View
 
         }
 
-        private void ValidarOpcao(string op) // this function will validade the menu option choosed by the user; Esta função vai validar a opção do menu escolhida pelo usuário 
+        private void ValidaOpcaoMenu(string op) // this function will validade the menu option choosed by the user; Esta função vai validar a opção do menu escolhida pelo usuário 
         {
 
             if (string.IsNullOrWhiteSpace(op)) { // if one menu option was not choosed by the user will throw; Se o usuário não escolher nenhuma opção vai levantar uma exceção
@@ -119,7 +119,7 @@ namespace PokeTamagotchiGame.View
                 {
                     Console.Write("Por favor, digite a opção a ser escolhida: ");
 
-                    this.ValidarOpcao(Convert.ToString(Console.ReadLine()));
+                    this.ValidaOpcaoMenu(Convert.ToString(Console.ReadLine()));
 
                     continua = false;
                 }
