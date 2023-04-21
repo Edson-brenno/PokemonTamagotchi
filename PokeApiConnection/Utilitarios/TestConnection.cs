@@ -22,16 +22,16 @@ namespace ApiConnection.Utilitarios
             return response.IsSuccessful;
         }
 
-        internal static bool IsApiAvailable(string address, string endereco)
-        {
-            RestClient client = new RestClient(address);
+        //internal static bool IsApiAvailable(string address, string endereco)
+        //{
+        //    RestClient client = new RestClient(address);
 
-            RestRequest request = new RestRequest(endereco, Method.Get);
+       //     RestRequest request = new RestRequest(endereco, Method.Get);
 
-            RestResponse response = client.ExecuteGet(request);
+       //     RestResponse response = client.ExecuteGet(request);
 
-            return response.IsSuccessful;
-        }
+      //      return response.IsSuccessful;
+        //}
 
     }
 }

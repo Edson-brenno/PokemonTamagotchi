@@ -34,7 +34,7 @@ namespace PokeApiConnection
         public void CheckConnectionApi(string local)
         {
 
-            bool isAvailable = TestConnection.IsApiAvailable(this.endereco, local);
+            bool isAvailable = TestConnection.IsApiAvailable(this.endereco);
 
             if (isAvailable == false)
             {

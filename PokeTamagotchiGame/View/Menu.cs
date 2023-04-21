@@ -8,25 +8,10 @@ using PokeTamagotchiGame.ViewExceptions;
 
 namespace PokeTamagotchiGame.View
 {
-    internal class Menu
+    internal class Menu : ApresentacaoAbstract
     {
         private string nomeJogador = ""; // Will archive the name of the player; Vai conter o nome do jogador
         private int opcaoMenu; // Will have the Menu option selected by the player; Vai conter a opção do menu selecionada pelo jogador
-
-        private void Separador() // Will print the Separator; Vai escrever um separador
-        {
-            Console.WriteLine("===============================================================================");
-        }
-        private void ApresentaJogo(){ // Game Apresentation name; Apresentação do nome do jogo
-
-            this.Separador();
-            
-            Console.WriteLine("                            PokeTamagotchi                                     ");
-
-            this.Separador();
-
-        }
-
         private void ObtemNomeJogador() // Function that will get the player name; Função que vai obter o nome do jogador
         {
             bool continua = true;
@@ -99,19 +84,25 @@ namespace PokeTamagotchiGame.View
             }
    
         }
-        private void OpcoesMenu() // Function to the menu options; Função para as opções do menu
+        public void OpcoesMenu() // Function to the menu options; Função para as opções do menu
         {
 
             bool continua = true;
 
-            this.Separador();
+            base.LimparTela();
+
+            base.Separador();
+
+            base.EscreveMenu();
+
+            base.Separador();
 
             // Menu Options
             Console.WriteLine("1 - Adotar um mascote virtual");
             Console.WriteLine("2 - Ver seus mascotes");
             Console.WriteLine("3 - Sair do jogo");
 
-            this.Separador();
+            base.Separador();
 
             while (continua){ // while the user didn't choosed one valid menu option will keep asking; Enquanto o usuário não escolher uma opção valida vai ficar peguntando a opção a ser escolhida
 
@@ -135,8 +126,10 @@ namespace PokeTamagotchiGame.View
             switch (this.opcaoMenu)
                 {
                     case 1:
+                        EscolhaMascoteVirtual escolhaMascote = new EscolhaMascoteVirtual();
 
-                        Console.WriteLine("Bem vindo a adoção do seu mascote");
+                        escolhaMascote.Main();
+
                         break;
 
                     case 2:
@@ -163,7 +156,7 @@ namespace PokeTamagotchiGame.View
         public void Main()
         {
 
-            this.ApresentaJogo();
+            base.ApresentaJogo();
 
             this.ObtemNomeJogador();
 

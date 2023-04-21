@@ -17,7 +17,11 @@ namespace PokeTamagotchiGame.Model
 
         public override string ToString()
         {
-            return $"Nome: {this.name} \n Altura: {this.height} \n Peso: {this.weight} \n Habilidades";
+            return $"" +
+                $"                            Nome: {this.name} \n " +
+                $"                           Altura: {this.height} cm \n " +
+                $"                           Peso: {this.weight} KG \n " +
+                $"                           Habilidades";
         }
     }
 

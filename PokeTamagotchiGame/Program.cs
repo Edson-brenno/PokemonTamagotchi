@@ -5,6 +5,7 @@ using System.Text;
 using Newtonsoft.Json;
 using PokeTamagotchiGame;
 using PokeTamagotchiGame.View;
+using PokeTamagotchiGame.Controller;
 
 try
 {
@@ -14,9 +15,21 @@ try
 
     //Console.WriteLine(test);
 
+    Console.BackgroundColor = ConsoleColor.Blue;
+    Console.ForegroundColor = ConsoleColor.White;
+    Console.SetWindowSize(90, 20);
+    
+    Console.Clear();
+
     Menu menu = new Menu();
 
     menu.Main();
+
+    //AdocaoMascote adotarPoke = new AdocaoMascote();
+
+    //Console.WriteLine(adotarPoke.ListarPokemon(1));
+
+    //Console.WriteLine(adotarPoke.EscolherPokemon(1));
 
 }
 catch(Exception ex)
