@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PokeApiConnection\ApiConnection.csproj" />
+    <ProjectReference Include="..\MongoDbConf\MongoDbConf.csproj" />
   </ItemGroup>
 
 </Project>
