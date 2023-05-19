@@ -6,7 +6,6 @@ using Newtonsoft.Json;
 using PokeTamagotchiGame;
 using PokeTamagotchiGame.View;
 using PokeTamagotchiGame.Controller;
-using MongoDbConf;
 
 // try
 // {
@@ -39,6 +38,6 @@ using MongoDbConf;
 //     Console.WriteLine(ex.Message);
 // }
 
-PrimeiroTestMongo tt = new PrimeiroTestMongo();
+// PrimeiroTestMongo tt = new PrimeiroTestMongo();
 
-tt.TesteConnection();
+// tt.TesteConnection();
